@@ -6,6 +6,8 @@ from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
+STATUS = ((0, "Draft"), (1, "Published"))
+
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -36,7 +38,7 @@ class Article(models.Model):
     news_content = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     news_categories = models.ManyToManyField(Category)
-    published = models.BooleanField(default=False)
+    Published_status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='news_like', blank=True)
 
