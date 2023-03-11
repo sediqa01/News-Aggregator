@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from cloudinary.models import CloudinaryField
-from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
@@ -34,8 +33,8 @@ class Article(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.CASCADE, related_name='news_article')
     news_image = CloudinaryField('image', default='placeholder')
-    news_overview = RichTextField(blank=True, null=True)
-    news_content = RichTextField(blank=True, null=True)
+    news_overview = models.TextField(null=True)
+    news_content = models.TextField(null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     news_categories = models.ManyToManyField(Category)
     Published_status = models.IntegerField(choices=STATUS, default=0)
