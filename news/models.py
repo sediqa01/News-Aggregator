@@ -37,7 +37,7 @@ class Article(models.Model):
     news_content = models.TextField(null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     news_categories = models.ManyToManyField(Category)
-    Published_status = models.IntegerField(choices=STATUS, default=0)
+    published_status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='news_like', blank=True)
 
