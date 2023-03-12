@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
 .logo {
     font-family: 'Racing Sans One';
     font-size: 1.8rem;
@@ -24,6 +30,13 @@
 .social-link i {
     list-style-type: none;
     font-size: 120%;
-    color: #3a3a3a;
+    color: #353434;
    
 }
+/* .news-content {
+    text-align:left;
+
+} */
+
+
+
