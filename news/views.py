@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Article
+from news.models import Article
 
 
 class NewsList(generic.ListView):
@@ -8,8 +8,8 @@ class NewsList(generic.ListView):
 
     queryset = Article.objects.filter(
         published_status=1).order_by("-created_on")
-    template_name = "base.html"
-    paginate_by = 3
+    template_name = "index.html"
+    paginate_by = 9
 
 
 class NewsDetail(View):
