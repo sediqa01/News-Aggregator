@@ -8,8 +8,8 @@
 
 .logo {
     font-family: 'Racing Sans One';
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.9rem;
+    font-weight: 600;
     color: #cf4b1f;
 }
 
@@ -41,7 +41,7 @@
 .display-date {
     text-align: left;
     margin: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
   }
 
