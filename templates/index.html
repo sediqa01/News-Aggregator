@@ -8,12 +8,21 @@
             <div class="row">
                 <!-- Card's code from Bootstrap  -->
                 {% for article in article_list %}
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="News Image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ article.news_title}}</h5>
-                      <p class="card-text">{{ article.news_overview | safe}}</p>
-                    </div>
+                <div class="col-md-4"></div>
+                <div class="card mb-4">
+                    
+                        <div class="image-container">
+                            {% if "placeholder" in article.news_image.url %}
+                            <img class="card-img-top" 
+                            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dbreaking%2Bnews&psig=AOvVaw3Np4QrCM51iN2lPusbjeRG&ust=1678992400133000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOjQi57M3v0CFQAAAAAdAAAAABAE">
+                            {% else %}
+                            <img class="card-img-top" src=" {{ article.news_image.url }}">
+                            {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.news_title}}</h5>
+                        <p class="card-text">{{ article.news_overview | safe}}</p>
+                        </div>
+
                     {% if forloop.counter|divisibleby:2 %}
                 </div>
                 <div class="row">
