@@ -10,7 +10,7 @@
                 {% for article in article_list %}
                 <div class="col-md-4"></div>
                 <div class="card mb-4">
-                    
+                    <a href="{% url 'article' article.slug  %}" class="news-link">
                         <div class="image-container">
                             {% if "placeholder" in article.news_image.url %}
                             <img class="card-img-top" 
@@ -20,9 +20,9 @@
                             {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ article.news_title}}</h5>
-                        <p class="card-text">{{ article.news_overview | safe}}</p>
+                            <p class="card-text">{{ article.news_overview | safe}}</p>
                         </div>
-
+                    </a>
                     {% if forloop.counter|divisibleby:2 %}
                 </div>
                 <div class="row">
