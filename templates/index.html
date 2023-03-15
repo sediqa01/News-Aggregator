@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 
 <div class="container-fluid">
     <div class="row">
@@ -13,8 +14,7 @@
                     <a href="{% url 'article' article.slug  %}" class="news-link">
                         <div class="image-container">
                             {% if "placeholder" in article.news_image.url %}
-                            <img class="card-img-top" 
-                            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dbreaking%2Bnews&psig=AOvVaw3Np4QrCM51iN2lPusbjeRG&ust=1678992400133000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOjQi57M3v0CFQAAAAAdAAAAABAE">
+                            <img class="card-img-top" src="{% static 'image/newsImage.jpg' %}">
                             {% else %}
                             <img class="card-img-top" src=" {{ article.news_image.url }}">
                             {% endif %}
