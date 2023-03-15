@@ -45,6 +45,41 @@
     font-weight: 600;
   }
 
+.card {
+    width: 20rem;
+    border: none;
+  }
 
+.card-title {
+    margin: 3% 3%;
+    font-weight: 650;
+    color: #292828;
+}
+.card-text {
+    text-align: justify;
+    font-size: 0.7rem;
+    color: #444447;
+    
+
+}
+.news-link {
+    text-decoration: none;
+}
+
+.card-title:hover {
+    color: #cf4b1f;
+    text-decoration: underline;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+}
+.c-color {
+    color: #cf4b1f;
+}
+
+.category-name {
+    font-weight: 500;
+
+}
 
 
