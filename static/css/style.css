@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
 
 .logo {
     font-family: 'Racing Sans One';
@@ -19,48 +19,51 @@
     justify-content: center;
 
 }
+
 .social-link a {
     text-decoration: none;
 }
-.social-link > li{
+
+.social-link>li {
     display: inline;
     margin: 0.3%;
     padding: 0.3%;
 }
+
 .social-link i {
     list-style-type: none;
     font-size: 120%;
     color: #353434;
-   
 }
-/* .news-content {
-    text-align:left;
 
-} */
-
+/* Display date */
 .display-date {
     text-align: center;
     margin: 10px;
     font-size: 0.9rem;
     font-weight: 600;
-  }
+    padding-top: 1%;
+    padding-bottom: 1%;
 
+}
+
+/* News post card  */
 .card {
     width: 20rem;
     border: none;
-  }
+}
 
 .card-title {
     font-weight: 650;
     color: #292828;
 }
+
 .card-text {
-    text-align: justify;
+    justify-content: center;
     font-size: 0.7rem;
     color: #444447;
-    
-
 }
+
 .news-link {
     text-decoration: none;
 }
@@ -72,6 +75,7 @@
     font-weight: 600;
 
 }
+
 .c-color {
     color: #d83c08;
 }
@@ -82,4 +86,6 @@
 
 }
 
-
+.date {
+    font-size: 0.7rem;
+}

@@ -24,17 +24,17 @@
                         </div>
                     </a>
                     <p class="category-name"> <span class="c-color">|</span> {{ article.news_categories.all.0}}</p>
+                    <hr>
+                    <p class=" date text-muted">{{ article.created_on}}</p>
 
                     {% if forloop.counter|divisibleby:3 %}
                 </div>
                 <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-
     </div>
-</div>
-
 {%endblock%}
+    
