@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+  <!-- Site NavBar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><span class="logo">NewsTime</span></a>
@@ -56,7 +56,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Site Header -->
   <header>
     <div class="display-date">
@@ -65,20 +65,13 @@
       <span id="month">month</span>
       <span id="year">0000</span>
     </div>
-  </header> 
-  
+  </header>
+
   <main class="flex-shrink-0 main-bg">
     {% block content %}
     <!-- Content goes here -->
     {% endblock content %}
   </main>
-
-  <!-- <section>
-    Section 2
-  </section>
-  <section>
-    Section 3
-  </section> -->
 
   <!-- Footer -->
   <footer class="footer mt-auto py-3 bg-body-tertiary">
@@ -108,7 +101,8 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
   </script>
 
-<script src="{% static 'js/script.js' %}"> </script>
+  <!-- Link to Javascript File  -->
+  <script src="{% static 'js/script.js' %}"> </script>
 </body>
 
 </html>

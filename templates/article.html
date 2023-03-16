@@ -4,6 +4,7 @@
 
 <div class="section">
     <div class="container">
+        <!-- News title and details -->
         <div class="text-center mt-8">
             <h2>{{ article.news_title }}</h2>
             <p>{{ article.created_on}} <span class="c-color">|</span><span
@@ -18,7 +19,7 @@
             <img src=" {{ article.news_image.url }}" alt="News Image" width="100%">
             {% endif %}
         </div>
-
+        <!-- News Content -->
         <div class="news-content row mt-5">
             <div class="col-lg-8 mx-auto">
                 <p> {{ article.news_overview| safe}}</p>
@@ -27,6 +28,12 @@
                 </p>
             </div>
 
+        </div>
+        <div class="row">
+            <!-- Likes and comments -->
+            <div class="col-1">
+                <strong class="text-secondary"><i class="far fa-heart"></i> {{ article.number_of_likes }} </strong>
+            </div>
         </div>
     </div>
 </div>
