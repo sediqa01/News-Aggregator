@@ -73,6 +73,9 @@
 .date {
     font-size: 0.7rem;
 }
+.category-name-d {
+    padding: 2%;
+}
 
 /* Pagination */
 .page-link {

@@ -7,9 +7,9 @@
         <!-- News title and details -->
         <div class="text-center mt-8">
             <h2>{{ article.news_title }}</h2>
-            <p>{{ article.created_on}} <span class="c-color">|</span><span
-                    class="category-name">{{ article.news_categories.all.0}}</span></p>
-
+            <p class="category-name-d">{{ article.created_on}} <span
+                    class="c-color">| </span><span>{{ article.news_categories.all.0}}</span></p>
+            <br>
         </div>
 
         <div class="text-center mt-8 image-container">
@@ -34,6 +34,10 @@
             <div class="col-1">
                 <strong class="text-secondary"><i class="far fa-heart"></i> {{ article.number_of_likes }} </strong>
             </div>
+        </div>
+        <hr>
+        <div>
+            <!-- Comment section goes here  -->
         </div>
     </div>
 </div>

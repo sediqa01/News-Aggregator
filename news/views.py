@@ -14,7 +14,7 @@ class NewsList(generic.ListView):
 class NewsDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Article.objects.filter(published_status=1)
+        queryset = Article.objects.filter(slug=slug)
         news = get_object_or_404(queryset, slug=slug)
         liked = False
         if news.likes.filter(id=self.request.user.id).exists():
@@ -24,7 +24,7 @@ class NewsDetail(View):
             request,
             "article.html",
             {
-                "news": news,
+                "article": news,
                 "liked": liked
             },
         )
