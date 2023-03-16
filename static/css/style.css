@@ -97,3 +97,12 @@
 .page-link {
     color: #292828;
 }
+.page-link {
+    background-color: #cf4b1f;
+    color: white;
+    text-decoration: none;
+}
+.page-link:hover {
+    text-decoration: none;
+    color:#cf4b1f;
+}

@@ -3,56 +3,51 @@
 {% load static %}
 
 <div class="container-fluid">
-    <div class="row">
+  <div class="row">
 
-        <div class="container col-12 mt-3 left">
-            <div class="row">
-                <!-- Card's code from Bootstrap  -->
-                {% for article in article_list %}
-                <div class="row-break col-md-4">
-                    <div class="card mb-4">
-                        <a href="{% url 'article' article.slug  %}" class="news-link">
+    <div class="container col-12 mt-3 left">
+      <div class="row">
+        <!-- Card's code from Bootstrap  -->
+        {% for article in article_list %}
+        <div class="row-break col-md-4">
+          <div class="card mb-4">
+            <a href="{% url 'article' article.slug  %}" class="news-link">
 
-                            {% if "placeholder" in article.news_image.url %}
-                            <img class="card-img-top" src="{% static 'image/newsImage.jpg' %}">
-                            {% else %}
-                            <img class="card-img-top" src=" {{ article.news_image.url }}">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ article.news_title}}</h5>
-                                <p class="card-text">{{ article.news_overview | safe}}</p>
-                            </div>
-                        </a>
-                        <p class="category-name"> <span class="c-color">|</span> {{ article.news_categories.all.0}}</p>
-                        <hr>
-                        <p class=" date text-muted">{{ article.created_on}}</p>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
+              {% if "placeholder" in article.news_image.url %}
+              <img class="card-img-top" src="{% static 'image/newsImage.jpg' %}">
+              {% else %}
+              <img class="card-img-top" src=" {{ article.news_image.url }}">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ article.news_title}}</h5>
+                <p class="card-text">{{ article.news_overview | safe}}</p>
+              </div>
+            </a>
+            <p class="category-name"> <span class="c-color">|</span> {{ article.news_categories.all.0}}</p>
+            <hr>
+            <p class=" date text-muted">{{ article.created_on}}</p>
+          </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">
+        {% endif %}
+        {% endfor %}
+      </div>
     </div>
-    <nav aria-label="navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <span class="page-link">Previous</span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active">
-            <span class="page-link">
-              2
-              <span class="sr-only">(current)</span>
-            </span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
+  </div>
+  <!-- Site Pagination -->
+  {% if is_paginated %}
+  <div class="d-flex justify-content-center" aria-label="site pagination">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+      <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a></li>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
 </div>
-    {%endblock%}
+{%endblock%}

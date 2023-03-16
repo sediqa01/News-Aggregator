@@ -8,7 +8,7 @@ class NewsList(generic.ListView):
     queryset = Article.objects.filter(
         published_status=1).order_by("-created_on")
     template_name = "index.html"
-    paginate_by = 9
+    paginate_by = 6
 
 
 class NewsDetail(View):
