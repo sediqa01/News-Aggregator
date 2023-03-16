@@ -46,7 +46,12 @@
     padding-bottom: 1%;
 
 }
-
+.container {
+    padding: 1% 10%;
+}
+.row-break {
+    padding: 2% 0;
+}
 /* News post card  */
 .card {
     width: 20rem;
