@@ -123,6 +123,17 @@
     background-color:white;
     color:#cf4b1f;
 }
+.con-logout {
+    margin: 8%;
+}
+.link {
+    color: #445261;
+    text-decoration: none;
+}
 
-
+.link:hover,
+.link:active {
+    
+    text-decoration: underline;
+}
 

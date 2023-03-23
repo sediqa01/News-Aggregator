@@ -41,6 +41,9 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Add News</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
           </li>
           <li class="nav-item">
@@ -57,14 +60,14 @@
     </div>
   </nav>
 <!-- Site Header -->
-<header>
+<!-- <header>
   <div class="display-date">
     <span id="day">day</span>,
     <span id="todayDate">00</span>
     <span id="month">month</span>
     <span id="year">0000</span>
   </div>
-</header>
+</header> -->
 
   <main class="flex-shrink-0 main-bg">
     {% block content %}
