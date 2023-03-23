@@ -31,7 +31,7 @@ const months = [
       "Saturday",
     ];
     // the html element
-    const id = ["day", "daynum", "month", "year"];
+    const id = ["day", "todayDate", "month", "year"];
 
     // return value array with number as a index
     const val = [Weeksday[dayName], dayNum, months[month], year];
