@@ -25,6 +25,7 @@ class NewsDetail(View):
             "article.html",
             {
                 "article": news,
+                "comments": comments,
                 "liked": liked
             },
         )
