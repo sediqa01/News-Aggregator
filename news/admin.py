@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Author, Category
+from .models import Article, Author, Category, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -21,3 +21,13 @@ class AuthorAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['category_name']
 
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'content', 'news', 'created_on', 'approved')
+    list_filter = ('approved', 'created_on')
+    search_fields = ('user', 'content')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
