@@ -36,7 +36,22 @@
         </div>
         <hr>
         <div>
-            Comment section goes here  
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <form method="POST" action="" >
+                                {% csrf_taken %}
+                                <div class="form-group">
+                                    {{form}}
+                                </div>
+                                
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
 </div>
