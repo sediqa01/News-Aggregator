@@ -32,7 +32,6 @@ class NewsDetail(View):
             },
         )
 
-
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Article.objects.filter(status=1)
@@ -51,16 +50,14 @@ class NewsDetail(View):
         else:
             comment_form = CommentForm()
 
-        return render(
-        request,
-        "article.html",
-        {
-            "article": news,
-            "comments": comments,
-            "commented": True,
-            "form": comment_form,
-            "liked": liked
-        },
-    )
-
-        
+        return render( 
+            request,
+            "article.html",
+            {
+                "article": news,
+                "comments": comments,
+                "commented": True,
+                "form": comment_form,
+                "liked": liked
+            },
+        )

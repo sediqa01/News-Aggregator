@@ -33,11 +33,19 @@
             <div class="col-1">
                 <strong class="text-secondary"><i class="far fa-heart"></i> {{ article.number_of_likes }} </strong>
             </div>
+            <div class="col-1">
+                {% with comments.count as total_comments %}
+                <strong class="text-secondary"><i class="far fa-comments"></i>
+                    {{ total_comments }}</strong>
+                {% endwith %}
+            </div>
         </div>
         <hr>
+        <!-- Comments Section -->
         <div>
             <div class="section">
                 <div class="container">
+                    <h3> Comments:</h3>
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <form method="POST" action="" >
@@ -45,7 +53,7 @@
                                 <div class="form-group">
                                     {{form}}
                                 </div>
-                                
+                            <button class="btn btn-primary btn-block" type="submit">Comment</button>
                             </form>
 
                         </div>
