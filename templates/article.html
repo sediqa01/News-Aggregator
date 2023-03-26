@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- {% load crispy_forms_tags %} -->
 {% load static %}
 
 <div class="section">
@@ -7,7 +8,7 @@
         <!-- News title and details -->
         <div class="text-center mt-8">
             <h2>{{ article.news_title }}</h2>
-            <p class="category-name-d">{{ article.created_on}} <span class="c-color">|
+            <p class="category-name-d">{{ article.created_on }} <span class="c-color">|
                 </span><span>{{ article.news_categories.all.0}}</span></p>
             <br>
         </div>
@@ -33,35 +34,37 @@
             <div class="col-1">
                 <strong class="text-secondary"><i class="far fa-heart"></i> {{ article.number_of_likes }} </strong>
             </div>
-           
+            <div class="col-1">
+                {% with comments.count as total_comments %}
+                <strong class="text-secondary"><i class="far fa-comments"></i>
+
+                    {{ total_comments }}</strong>
+                {% endwith %}
+            </div>
         </div>
         <hr>
         <!-- Comments Section -->
         <div>
             <div class="section">
                 <div class="container">
-                    <h3> Comments: <span class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                        </span>
-                    </h3>
+                    <h3> Comments: </h3>
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
-                            <div class="comment-list">
+                            <!-- User comments list -->
+                            <div class="media-list  md-5">
+                                {% for comment in comments %}
                                 <div>
-                                    <img  class="avator avator-sm mr-4" src="{% static 'image/avator.jpg' %}" alt="User Avator">
-                                    <div class="comment-message" >
+                                    <img class="avator avator-sm mr-4" src="{% static 'image/avator.jpg' %}"
+                                        alt="User Avator">
+                                    <div class="media-body">
                                         <div class="small-1">
-                                            <b>User Name</b>
-                                            <time class="ml-4 opacity-70 small-3"> Time here</time>
+                                            <b>{{ comment.user}}</b>
+                                            <time class="ml-4 opacity-70 small-3">{{ comment.created_on}}</time>
+                                            <p>{{ comment.content}}</p>
                                         </div>
-
-
                                     </div>
-                                <div>
-
+                                    {% endfor %}
+                                </div>
                             </div>
                             {% if commented %}
                             <div class="alert alert-success" role="alert">
@@ -74,7 +77,7 @@
                                 <div class="mt-3">
                                     {{ form }}
                                 </div>
-                                <button class="btn btn-primary " type="submit">Comment</button>
+                                <button class="btn btn-primary" type="submit">Comment</button>
                             </form>
                             {% endif %}
                             {% endif %}

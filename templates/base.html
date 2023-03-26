@@ -40,18 +40,19 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">   feature implementation
             <a class="nav-link" href="#">Add News</a>
+          </li> -->
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
           </li>
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
           </li>
           {% endif %}
         </ul>
@@ -59,8 +60,8 @@
       </div>
     </div>
   </nav>
-<!-- Site Header -->
-<!-- <header>
+  <!-- Site Header -->
+  <!-- <header>
   <div class="display-date">
     <span id="day">day</span>,
     <span id="todayDate">00</span>

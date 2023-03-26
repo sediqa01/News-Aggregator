@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from news.models import Article
-from .forms import CommentsForm
+from .forms import CommentForm
 
 
 class NewsList(generic.ListView):
@@ -30,13 +30,13 @@ class NewsDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "form": CommentsForm()
+                "form": CommentForm()
             },
         )
 
     def post(self, request, slug, *args, **kwargs):
 
-        queryset = Article.objects.filter(status=1)
+        queryset = Article.objects.filter(published_status=1)
         news = get_object_or_404(queryset, slug=slug)
         comments = news.comments.filter(approved=True).order_by("-created_on")
         liked = False
@@ -45,14 +45,14 @@ class NewsDetail(View):
 
         form = CommentForm(data=request.POST)
         if form.is_valid():
-            form.instance.user = request.user.username
+            form.instance.user = request.user
             comment = form.save(commit=False)
             comment.news = news
             comment.save()
         else:
             form = CommentForm()
 
-        return render( 
+        return render(
             request,
             "article.html",
             {

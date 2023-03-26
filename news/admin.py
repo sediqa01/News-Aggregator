@@ -7,7 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class ArticleAdmin(SummernoteModelAdmin):
     summernote_fields = ('news_overview', 'news_content')
     prepopulated_fields = {'slug': ('news_title',)}
-    list_filter = ('published_status', 'created_on')
+    list_filter = ('published_status',)
     search_fields = ['news_title', 'news_content']
     list_display = ('news_title', 'published_status', 'created_on')
 

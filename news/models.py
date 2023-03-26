@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from cloudinary.models import CloudinaryField
+from datetime import datetime
 
 User = get_user_model()
 
@@ -56,7 +57,7 @@ class Comment(models.Model):
                              related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
