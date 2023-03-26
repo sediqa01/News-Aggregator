@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from news.models import Article
 from .forms import CommentForm
 
@@ -63,3 +64,14 @@ class NewsDetail(View):
                 "liked": liked
             },
         )
+
+
+class Like(View):
+    def post(self, request, slug, *args, **kwargs):
+        news = get_object_or_404(Article, slug=slug)
+        if news.likes.filter(id=request.user.id).exists():
+            news.likes.remove(request.user)
+        else:
+            news.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('article', args=[slug]))
