@@ -1,7 +1,9 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 from datetime import datetime
 
 User = get_user_model()
@@ -50,6 +52,14 @@ class Article(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.news_title)
+        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<!-- {% load crispy_forms_tags %} -->
 {% load static %}
 
 <div class="section">
@@ -27,7 +26,6 @@
                     {{ article.news_content| safe }}
                 </p>
             </div>
-
         </div>
         <div class="row">
             <!-- Likes and comments -->
@@ -37,16 +35,18 @@
                     <form class="d-inline" action="{% url 'news_like' article.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i class="fas fa-heart"></i></button>
+                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
+                                class="fas fa-heart"></i></button>
                         {% else %}
-                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i class="far fa-heart"></i></button>
+                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
+                                class="far fa-heart"></i></button>
                         {% endif %}
                     </form>
                     {% else %}
                     <span class="text-secondary"><i class="far fa-heart"></i></span>
                     {% endif %}
-                <!-- The number of likes goes before the closing strong tag -->
-                <span class="text-secondary">{{ article.number_of_likes }} </span>
+                    <!-- The number of likes goes before the closing strong tag -->
+                    <span class="text-secondary">{{ article.number_of_likes }} </span>
                 </strong>
             </div>
             <div class="col-1">

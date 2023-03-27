@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.urls import reverse_lazy
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from news.models import Article
-from .forms import CommentForm
+from .forms import CommentForm, AddNewsForm
+from django.views.generic.edit import FormView, CreateView
 
 
 class NewsList(generic.ListView):
@@ -75,3 +77,17 @@ class Like(View):
             news.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('article', args=[slug]))
+
+
+class AddNewsPost(CreateView):
+    model = Article
+    template_name = 'add_news.html'
+    form_class = AddNewsForm
+    success_url = reverse_lazy('home')
+
+# ---- later ----
+    # def form_valid(self, form):
+    #     author = Author.objects.get(user=self.request.user)
+    #     form.instance.author = self.request.user
+    #     form.save()
+    #     return super(form_valid, self).form_valid(form)

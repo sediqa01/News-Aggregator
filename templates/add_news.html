@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<h2>Add News Post</h2>
+<br>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <button class="text-secondary">Post</button>
+    </form>
+</div>
+{%endblock%}
