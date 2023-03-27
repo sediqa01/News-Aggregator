@@ -73,6 +73,7 @@
 .date {
     font-size: 0.7rem;
 }
+
 .category-name-d {
     padding: 2%;
 }
@@ -100,7 +101,7 @@
     text-decoration: none;
 }
 
-.social-link > li {
+.social-link>li {
     display: inline;
     margin: 0.3%;
     padding: 0.3%;
@@ -115,17 +116,19 @@
 /* Athentication */
 
 .btn {
-    background-color:#cf4b1f;
-    color:white;
+    background-color: #cf4b1f;
+    color: white;
 }
 
 .btn:hover {
-    background-color:white;
-    color:#cf4b1f;
+    background-color: white;
+    color: #cf4b1f;
 }
+
 .con-logout {
     margin: 8%;
 }
+
 .link {
     color: #445261;
     text-decoration: none;
@@ -133,15 +136,16 @@
 
 .link:hover,
 .link:active {
-    
+
     text-decoration: underline;
 }
 
 /* comment */
-.btn-primary{
+.btn-primary {
     margin: 3%;
-    border:none;
+    border: none;
 }
+
 .avator {
     height: 40px;
     width: 40px;
@@ -151,4 +155,10 @@
     border: none;
     color: #cf4b1f;
     background: transparent;
+}
+
+/* Add Post Form */
+.btn-secondary {
+    margin: 8% 0%;
+    border: none;
 }
