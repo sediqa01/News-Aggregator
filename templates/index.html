@@ -2,6 +2,16 @@
 {% block content %}
 {% load static %}
 
+ <!-- Site Header -->
+  <header>
+  <div class="display-date">
+    <span id="day">day</span>,
+    <span id="todayDate">00</span>
+    <span id="month">month</span>
+    <span id="year">0000</span>
+  </div>
+</header>
+
 <div class="container-fluid">
   <div class="row">
 
@@ -25,10 +35,14 @@
             </a>
             <p class="category-name"> <span class="c-color">|</span> {{ article.news_categories.all.0}}</p>
             <!-- Author action - Edite , Delete -->
+            {% if user.is_authenticated %}
+              {% if user.id == article.author.id %}
             <div class="manage-news">
               <a href="{% url 'update' article.slug  %}">Edite</a>
-              <a href="{% url 'delete' article.slug  %}">Edite</a>
+              <a href="{% url 'delete' article.slug  %}">Delete</a>
             </div>
+              {% endif%}
+            {% endif%}
             <hr>
             <p class="date text-muted">{{ article.created_on}}</p>
           </div>

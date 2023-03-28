@@ -85,9 +85,8 @@ class AddNewsPost(CreateView):
     form_class = AddNewsForm
     success_url = reverse_lazy('home')
 
-# ----  later ----
     # def form_valid(self, form):
-    #     author = Author.objects.get(user=self.request.user)
+    #     # author = Author.objects.get(user=self.request.user)
     #     form.instance.author = self.request.user
     #     form.save()
     #     return super(form_valid, self).form_valid(form)

@@ -41,9 +41,11 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
+            {% if user.id == article.author.id %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add_news' %}">Add News</a>
           </li>
+            {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
           </li>
@@ -60,16 +62,6 @@
       </div>
     </div>
   </nav>
-  <!-- Site Header -->
-  <!-- <header>
-  <div class="display-date">
-    <span id="day">day</span>,
-    <span id="todayDate">00</span>
-    <span id="month">month</span>
-    <span id="year">0000</span>
-  </div>
-</header> -->
-
   <main class="flex-shrink-0 main-bg">
     {% block content %}
     <!-- Content goes here -->
