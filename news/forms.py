@@ -35,3 +35,19 @@ class AddNewsForm(forms.ModelForm):
             'news_categories': forms.Select(attrs={'class': 'form-control'}),
             'published_status': forms.Select(attrs={'class': 'form-control'}),
         }
+
+
+class UpdateNewsForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = (
+            'news_title', 'news_image', 'news_overview',
+            'news_content', 'news_categories', 'published_status')
+
+        widgets = {
+            'news_title': forms.TextInput(attrs={'class': 'form-control'}),
+            'news_overview': forms.Textarea(attrs={'class': 'form-control'}),
+            'news_content': forms.Textarea(attrs={'class': 'form-control'}),
+            'news_categories': forms.Select(attrs={'class': 'form-control'}),
+            'published_status': forms.Select(attrs={'class': 'form-control'}),
+        }

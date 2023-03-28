@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from news.models import Article
-from .forms import CommentForm, AddNewsForm
+from .forms import CommentForm, AddNewsForm, UpdateNewsForm
 from django.views.generic.edit import FormView, CreateView, UpdateView
 
 
@@ -96,7 +96,5 @@ class AddNewsPost(CreateView):
 class UpdateNewsPost(UpdateView):
     model = Article
     template_name = 'update_news.html'
-    fields = (
-            'news_title', 'news_image', 'news_overview',
-            'news_content', 'news_categories')
+    form_class = UpdateNewsForm
     success_url = reverse_lazy('home')
