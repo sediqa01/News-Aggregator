@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from news.models import Article
 from .forms import CommentForm, AddNewsForm, UpdateNewsForm
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 class NewsList(generic.ListView):

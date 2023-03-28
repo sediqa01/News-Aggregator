@@ -25,8 +25,9 @@
             </a>
             <p class="category-name"> <span class="c-color">|</span> {{ article.news_categories.all.0}}</p>
             <!-- Author action - Edite , Delete -->
-            <div class="manage">
+            <div class="manage-news">
               <a href="{% url 'update' article.slug  %}">Edite</a>
+              <a href="{% url 'delete' article.slug  %}">Edite</a>
             </div>
             <hr>
             <p class="date text-muted">{{ article.created_on}}</p>
