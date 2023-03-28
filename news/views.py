@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.urls import reverse_lazy
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from news.models import Article
 from .forms import CommentForm, AddNewsForm, UpdateNewsForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 class NewsList(generic.ListView):
@@ -79,13 +80,19 @@ class Like(View):
         return HttpResponseRedirect(reverse('article', args=[slug]))
 
 
-class AddNewsPost(CreateView):
+class AddNewsPost(UserPassesTestMixin, CreateView):
     model = Article
     template_name = 'add_news.html'
     form_class = AddNewsForm
     success_url = reverse_lazy('home')
 
-    # def form_valid(self, form):
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        return HttpResponse("You are not an admin.")
+
+    # def form_valid(self, form):  -- late --
     #     # author = Author.objects.get(user=self.request.user)
     #     form.instance.author = self.request.user
     #     form.save()

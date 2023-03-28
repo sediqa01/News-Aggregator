@@ -171,3 +171,9 @@
 #delete-txt {
     color: #e70000;
 }
+
+.manage-news a {
+    text-decoration: none;
+    color: #414a53;
+    padding: 3%;
+}

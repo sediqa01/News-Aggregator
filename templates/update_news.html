@@ -7,9 +7,9 @@
 <div class="container">
     <div class="col-lg-8 mt-3 mx-auto">
         <div class="form-group">
-            <form method="POST">
+            <form method="POST" action="{% url 'update' article.slug  %}" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p}}
+                {{ form.as_p | safe }}
                 <button class="btn btn-secondary">Update</button>
             </form>
         </div>

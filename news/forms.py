@@ -1,5 +1,6 @@
 from django import forms
 from news.models import Comment, Article
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -15,6 +16,9 @@ class CommentForm(forms.ModelForm):
 
 
 class AddNewsForm(forms.ModelForm):
+    news_overview = forms.CharField(widget=SummernoteWidget())
+    news_content = forms.CharField(widget=SummernoteWidget())
+
     class Meta:
         model = Article
         fields = (
@@ -32,12 +36,16 @@ class AddNewsForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Write content here ...',
             }),
-            'news_categories': forms.Select(attrs={'class': 'form-control'}),
+            'news_categories': forms.SelectMultiple(
+                                attrs={'class': 'form-select'}),
             'published_status': forms.Select(attrs={'class': 'form-control'}),
         }
 
 
 class UpdateNewsForm(forms.ModelForm):
+    news_overview = forms.CharField(widget=SummernoteWidget())
+    news_content = forms.CharField(widget=SummernoteWidget())
+
     class Meta:
         model = Article
         fields = (
@@ -48,6 +56,7 @@ class UpdateNewsForm(forms.ModelForm):
             'news_title': forms.TextInput(attrs={'class': 'form-control'}),
             'news_overview': forms.Textarea(attrs={'class': 'form-control'}),
             'news_content': forms.Textarea(attrs={'class': 'form-control'}),
-            'news_categories': forms.Select(attrs={'class': 'form-control'}),
+            'news_categories': forms.SelectMultiple(
+                                attrs={'class': 'form-select'}),
             'published_status': forms.Select(attrs={'class': 'form-control'}),
         }
