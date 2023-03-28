@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from news.models import Article
 from .forms import CommentForm, AddNewsForm
-from django.views.generic.edit import FormView, CreateView
+from django.views.generic.edit import FormView, CreateView, UpdateView
 
 
 class NewsList(generic.ListView):
@@ -85,9 +85,18 @@ class AddNewsPost(CreateView):
     form_class = AddNewsForm
     success_url = reverse_lazy('home')
 
-# ---- later ----
+# ----  later ----
     # def form_valid(self, form):
     #     author = Author.objects.get(user=self.request.user)
     #     form.instance.author = self.request.user
     #     form.save()
     #     return super(form_valid, self).form_valid(form)
+
+
+class UpdateNewsPost(UpdateView):
+    model = Article
+    template_name = 'update_news.html'
+    fields = (
+            'news_title', 'news_image', 'news_overview',
+            'news_content', 'news_categories')
+    success_url = reverse_lazy('home')
