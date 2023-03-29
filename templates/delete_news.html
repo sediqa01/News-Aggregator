@@ -3,13 +3,13 @@
 {% load static %}
 
 
-<div class="container my-container h-100">
+<div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-md-8 offset-md-2 mt-5">
         <div class="form-group">
             <form method="POST">
                 {% csrf_token %}
-                <strong class="warning">Importent!</strong>
+                <strong class="warning">Importent <i class="fa-solid fa-circle-exclamation"></i></strong>
                 <br>
                 <br>
                 <p>Are you sure to <span id="delete-txt">Delete</span> this news post?</p>

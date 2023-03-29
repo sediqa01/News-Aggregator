@@ -4,99 +4,101 @@
 
 <div class="section">
     <div class="container">
-        <!-- News title and details -->
-        <div class="text-center mt-8">
-            <br>
-            <h2>{{ article.news_title }}</h2>
-            <p class="category-name-d">{{ article.created_on }} <span class="c-color">|
-                </span><span>{{ article.news_categories.all.0}}</span></p>
-            <br>
-        </div>
-        <div class="text-center mt-8 image-container">
-            {% if "placeholder" in article.news_image.url %}
-            <img src="{% static 'image/newsImage.jpg' %}" alt="News Image" width="100%">
-            {% else %}
-            <img src=" {{ article.news_image.url }}" alt="News Image" width="100%">
-            {% endif %}
-        </div>
-        <!-- News Content -->
-        <div class="news-content row mt-5">
-            <div class="col-lg-8 mx-auto">
-                <p> {{ article.news_overview| safe}}</p>
-                <p>
-                    {{ article.news_content| safe }}
-                </p>
+        <div class="col-12 mt-3 left">
+            <!-- News title and details -->
+            <div class="text-center mt-8">
+                <br>
+                <h2 id="news-title">{{ article.news_title }}</h2>
+                <p class="category-name-d">{{ article.created_on }} <span class="c-color"> |
+                    </span><span>{{ article.news_categories.all.0}}</span></p>
+                <br>
             </div>
-        </div>
-        <div class="row">
-            <!-- Likes and comments -->
-            <div class="col-1">
-                <strong>
-                    {% if user.is_authenticated %}
-                    <form class="d-inline" action="{% url 'news_like' article.slug %}" method="POST">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
-                                class="fas fa-heart"></i></button>
-                        {% else %}
-                        <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
-                                class="far fa-heart"></i></button>
-                        {% endif %}
-                    </form>
-                    {% else %}
-                    <span class="text-secondary"><i class="far fa-heart"></i></span>
-                    {% endif %}
-                    <!-- The number of likes goes before the closing strong tag -->
-                    <span class="text-secondary">{{ article.number_of_likes }} </span>
-                </strong>
+            <div class="img-container mt-8">
+                {% if "placeholder" in article.news_image.url %}
+                <img src="{% static 'image/newsImage.jpg' %}" alt="News Image" width="100%">
+                {% else %}
+                <img src=" {{ article.news_image.url }}" alt="News Image" width="100%">
+                {% endif %}
             </div>
-            <div class="col-1">
-                {% with comments.count as total_comments %}
-                <strong class="text-secondary"><i class="far fa-comments"></i>
-
-                    {{ total_comments }}</strong>
-                {% endwith %}
+            <!-- News Content -->
+            <div class="news-content row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <p class="content"> {{ article.news_overview| safe}}</p>
+                    <p class="content">
+                        {{ article.news_content| safe }}
+                    </p>
+                </div>
             </div>
-        </div>
-        <hr>
-        <!-- Comments Section -->
-        <div>
-            <div class="section">
-                <div class="container">
-                    <h3> Comments: </h3>
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <!-- User comments list -->
-                            <div class="media-list  md-5">
-                                {% for comment in comments %}
-                                <div>
-                                    <img class="avator avator-sm mr-4" src="{% static 'image/avator.jpg' %}"
-                                        alt="User Avator">
-                                    <div class="media-body">
-                                        <div class="small-1">
-                                            <b>{{ comment.user}}</b>
-                                            <time class="ml-4 opacity-70 small-3">{{ comment.created_on}}</time>
-                                            <p>{{ comment.content}}</p>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            {% if commented %}
-                            <div class="alert alert-success" role="alert">
-                                Your comment is awaiting approval
-                            </div>
+            <div class="row">
+                <!-- Likes and comments -->
+                <div class="col-1">
+                    <strong>
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'news_like' article.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
+                                    class="fas fa-heart"></i></button>
                             {% else %}
-                            {% if user.is_authenticated %}
-                            <form method="POST">
-                                {% csrf_token %}
-                                <div class="mt-3">
-                                    {{ form }}
+                            <button type="submit" name="blogpost_id" value="{{article.slug}}" class="like-btn"><i
+                                    class="far fa-heart"></i></button>
+                            {% endif %}
+                        </form>
+                        {% else %}
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
+                        {% endif %}
+                        <!-- The number of likes goes before the closing strong tag -->
+                        <span class="text-secondary">{{ article.number_of_likes }} </span>
+                    </strong>
+                </div>
+                <div class="col-1">
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+
+                        {{ total_comments }}</strong>
+                    {% endwith %}
+                </div>
+            </div>
+            <hr>
+            <!-- Comments Section -->
+            <div>
+                <div class="section">
+                    <div class="container">
+                        <h3> Comments: </h3>
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <!-- User comments list -->
+                                <div class="media-list  md-5">
+                                    {% for comment in comments %}
+                                    <div>
+                                        <img class="avator avator-sm mr-4" src="{% static 'image/avator.jpg' %}"
+                                            alt="User Avator">
+                                        <div class="media-body">
+                                            <div class="small-1">
+                                                <b>{{ comment.user}}</b>
+                                                <time class="ml-4 opacity-70 small-3">{{ comment.created_on}}</time>
+                                                <p>{{ comment.content}}</p>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Comment</button>
-                            </form>
-                            {% endif %}
-                            {% endif %}
+                                {% if commented %}
+                                <div class="alert alert-success" role="alert">
+                                    Your comment is awaiting approval
+                                </div>
+                                {% else %}
+                                {% if user.is_authenticated %}
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="mt-3">
+                                        {{ form }}
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Comment</button>
+                                </form>
+                                {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>

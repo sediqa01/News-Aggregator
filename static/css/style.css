@@ -20,7 +20,7 @@
     padding: 0.5%;
     font-size: 0.9rem;
     font-weight: 600;
-    
+
 }
 
 /* News post card  */
@@ -61,6 +61,10 @@
 
 .category-name-d {
     padding: 2%;
+}
+
+.content {
+    text-align: justify;
 }
 
 /* Pagination */
@@ -149,8 +153,9 @@
 }
 
 .warning {
+    padding-top: 20%;
     color: #e70000;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 #delete-txt {
@@ -167,7 +172,14 @@
 @media (max-width: 768px) {
     .card {
         width: 100%;
+    }
 
+    #news-title {
+        font-size: x-large;
+    }
+
+    .category-name-d {
+        font-size: small;
     }
 }
 
@@ -176,4 +188,5 @@
         padding: 10px;
 
     }
+
 }
