@@ -61,6 +61,17 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+# django_summernote config
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+
+    'summernote': {
+        'width': '100%',
+        'height': '480px',
+
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

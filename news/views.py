@@ -92,8 +92,8 @@ class AddNewsPost(UserPassesTestMixin, CreateView):
     def handle_no_permission(self):
         return HttpResponse("You are not an admin.")
 
-    # def form_valid(self, form):  -- late --
-    #     # author = Author.objects.get(user=self.request.user)
+    # def form_valid(self, form):
+    #     author = Author.objects.get(user=self.request.user)
     #     form.instance.author = self.request.user
     #     form.save()
     #     return super(form_valid, self).form_valid(form)
