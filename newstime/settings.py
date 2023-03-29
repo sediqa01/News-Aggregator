@@ -32,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['news-time.herokuapp.com', 'localhost']
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 

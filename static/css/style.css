@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 
-.row {
-    display: flex;
-    justify-content: center;
-}
 
 .logo {
     font-family: 'Racing Sans One';
@@ -56,13 +52,13 @@
 }
 
 
-.container {
+/* .container {
     padding: 2% 10%;
 }
 
 .row-break {
     padding: 2% 0;
-}
+} */
 
 .category-name {
     text-transform: uppercase;
@@ -177,10 +173,11 @@
     padding: 3%;
 }
 
-@media (min-width: 768px) {
+/* Media query */
 
-    .pixl {
-        margin-right: 2%;
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
     }
 }
-
