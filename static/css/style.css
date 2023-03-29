@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 
 
+.row {
+    justify-content: center;
+
+}
+
 .logo {
     font-family: 'Racing Sans One';
     font-size: 1.9rem;
@@ -11,17 +16,16 @@
 /* Display date */
 .display-date {
     text-align: center;
-    margin: 10px;
+    margin: 1%;
+    padding: 0.5%;
     font-size: 0.9rem;
     font-weight: 600;
-    padding-top: 1%;
-    padding-bottom: 1%;
-
+    
 }
 
 /* News post card  */
 .card {
-    width: 18rem;
+    width: 21rem;
     border: none;
     background-color: transparent;
 }
@@ -29,12 +33,6 @@
 .card-title {
     font-weight: 650;
     color: #292828;
-}
-
-.card-text {
-    justify-content: center;
-    font-size: 0.7rem;
-    color: #444447;
 }
 
 .news-link {
@@ -50,15 +48,6 @@
 .c-color {
     color: #d83c08;
 }
-
-
-/* .container {
-    padding: 2% 10%;
-}
-
-.row-break {
-    padding: 2% 0;
-} */
 
 .category-name {
     text-transform: uppercase;
@@ -174,10 +163,15 @@
 }
 
 /* Media query */
-
-
 @media (max-width: 768px) {
     .card {
         width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 10px;
+        margin: 8px;
     }
 }
