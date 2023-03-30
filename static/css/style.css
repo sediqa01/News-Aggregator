@@ -27,7 +27,7 @@
 .card {
     width: 22rem;
     border: none;
-    padding: 3% 0%;
+    padding: 4% 0%;
     background-color: transparent;
 }
 
@@ -52,6 +52,7 @@
 
 .category-name {
     text-transform: uppercase;
+    padding-left: 3%;
     font-size: 0.9rem;
 }
 
