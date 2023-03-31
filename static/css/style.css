@@ -93,8 +93,8 @@
 
 .social-link>li {
     display: inline;
-    margin: 0.3%;
-    padding: 0.3%;
+    margin: 0.4%;
+    padding: 0.4%;
 }
 
 .social-link i {
@@ -155,12 +155,12 @@
 
 .warning {
     padding-top: 20%;
-    color: #e70000;
+    color: #db0000;
     font-size: 2rem;
 }
 
 #delete-txt {
-    color: #e70000;
+    color: #f30000;
 }
 
 .manage-news a {
