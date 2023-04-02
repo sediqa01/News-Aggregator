@@ -47,11 +47,11 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
-           {% if user.is_superuser%}
+          {% if user.is_superuser%}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add_news' %}">Add News</a>
           </li>
-           {% endif %}
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
           </li>
@@ -66,25 +66,25 @@
         </ul>
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
-           {% if user.is_superuser%}
+          {% if user.is_superuser%}
           <span class="navbar-text"><strong>Logged as Admin: {{ user.username }}</strong></span>
           {% endif %}
           {% endif %}
-      </div>
+        </div>
       </div>
     </div>
   </nav>
 
   {% for message in messages %}
   <div class="container-fluid p-0">
-    <div class="alert {{ message.tags }} alert-dismissible" id="flash-msg" role="alert" >
-        <!-- <span aria-hidden="True">&times;</span> -->
+    <div class="alert {{ message.tags }} alert-dismissible" id="flash-msg" role="alert">
+      <!-- <span aria-hidden="True">&times;</span> -->
       </button>
       {{ message }}
     </div>
   </div>
   {% endfor %}
-  
+
   <main class="flex-shrink-0 main-bg">
     {% block content %}
     <!-- Content Goes here -->
