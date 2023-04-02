@@ -35,3 +35,19 @@ ___
 7. Comment on News Posts: As a Site User I can leave comments on a article so that I can share my thoughts about an article.
 8. Like/Unlike: As a Site User I can like or unlike an article so that I can interact with the content.
 8. Number of Likes: Number of As a Site User I can view the number of likes on each article so that I can see which type of news the audience prefers the.
+
+
+
+### _Design_
+
+* **Colors** 
+
+    * #cf4b1f - Logo, Buttons
+    * #db0000 - Warning Text
+    * tertiary - Navbar Background
+
+
+* **Fonts**
+
+    * Racing Sans One 
+
