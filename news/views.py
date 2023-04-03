@@ -86,12 +86,12 @@ class AddNewsPost(UserPassesTestMixin, LoginRequiredMixin, CreateView):
     form_class = AddNewsForm
     success_url = reverse_lazy('home')
 
-    # def form_valid(self, form):
-    #     author = Author.objects.get(user=self.request.user)
-    #     author = form.save(commit=False)
-    #     form.instance.author = self.request.user
-    #     form.save()
-    #     return super(form_valid, self).form_valid(form)
+    def form_valid(self, form):
+        author = Author.objects.get(user=self.request.user)
+        author = form.save(commit=False)
+        form.instance.author = self.request.user
+        form.save()
+        return super(form_valid, self).form_valid(form)
 
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user.is_superuser
