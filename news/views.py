@@ -111,10 +111,3 @@ class DeleteNews(DeleteView):
     model = Article
     template_name = 'delete_news.html'
     success_url = reverse_lazy('home')
-
-
-class UserSignupForm(generic.CreateView):
-
-    form_class = SignupForm
-    template_name = 'signup.html'
-    success_url = reverse_lazy('home')
