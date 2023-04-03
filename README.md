@@ -61,7 +61,7 @@ I created Wireframes to visualize the site's design and act as a template to use
 
 ![NewsTime Home page](./readme/Images/home.jpg)
 
----
+
 **Article Page**
 
 ![NewsTime Article](./readme/Images/article.jpg)
@@ -75,7 +75,28 @@ I created Wireframes to visualize the site's design and act as a template to use
 
 **Sign In page Page**
 
-![NewsTime Article](./readme/Images/signin.jpg)
+![NewsTime Sign In](./readme/Images/signin.jpg)
 
+
+
+### _ERD (Entity Relationship Diagram)_
+
+**Article/ News Post Data Model**
+
+![NewsTime News Post Data Model](./readme/Images/newspost.jpg)
+
+**User Comments Data Model**
+
+![NewsTime User Comments Data Model](./readme/Images/comments.jpg)
+
+**News Categories Data Model**
+
+![NewsTime News Categories Data Model](./readme/Images/category.jpg)
+
+**User Data Model**
+
+Note: I created a user data model and used the Django user model as well. I'll use my custom user model for future implementations.
+
+![NewsTime User Data Model](./readme/Images/user.jpg)
 
 
