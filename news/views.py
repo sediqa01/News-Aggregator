@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from django.http import HttpResponseRedirect, HttpResponse
 from news.models import Article, Author
-from .forms import CommentForm, AddNewsForm, UpdateNewsForm, SignupForm
+from .forms import CommentForm, AddNewsForm, UpdateNewsForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
@@ -88,11 +88,10 @@ class AddNewsPost(UserPassesTestMixin, LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         author = Author.objects.get(user=self.request.user)
-        author = form.save(commit=False)
-        form.instance.author = self.request.user
+        form.instance.author = author
         form.save()
-        return super(form_valid, self).form_valid(form)
-
+        return super().form_valid(form)
+        
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user.is_superuser
 

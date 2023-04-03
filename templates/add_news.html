@@ -7,7 +7,7 @@
 <div class="container">
     <div class="col-lg-8 mt-3 mx-auto">
         <div class="form-group">
-            <form method="POST">
+            <form method="POST"  enctype= multipart/form-data>
                 {% csrf_token %}
                 {{ form.media}}
                 {{ form.as_p}}
