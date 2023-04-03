@@ -27,7 +27,6 @@ class AddNewsForm(forms.ModelForm):
 
         widgets = {
             'news_title': forms.TextInput(attrs={'class': 'form-control'}),
-            # 'author': forms.Select(attrs={'class': 'form-control'}),
             'news_overview': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Write content here ...',

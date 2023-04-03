@@ -52,8 +52,30 @@ ___
     * Racing Sans One 
 
 
+
 ### _Wireframes_
 
+I created Wireframes to visualize the site's design and act as a template to use when developing the site.
+
 **Home Page**
+
+![NewsTime Home page](./readme/Images/home.jpg)
+
+---
+**Article Page**
+
+![NewsTime Article](./readme/Images/article.jpg)
+
+
+**Sign up page Page**
+
+![NewsTime Sign Up](./readme/Images/signup.jpg)
+
+
+
+**Sign In page Page**
+
+![NewsTime Article](./readme/Images/signin.jpg)
+
 
 
