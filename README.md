@@ -260,6 +260,40 @@ Note: I created a user data model and used the Django user model as well. I'll u
 * **psycopg2:** Python PostgreSQL database adapter.
 
 
+## __Deployment__
+
+### **Create a database**
+These steps will create a PostgreSQL database:
+1. Log in to ElephantSQL.com to access your dashboard
+2. Click "Create New Instance"
+3. Set up your plan
+4. Select "Select Region"
+5. Select a data center near you
+6. Then click "Review"
+7. Check your details are correct and then click "Create instance"
+8. Return to the ElephantSQL dashboard and click on the database instance name for this project
+9. In the URL section, click the copy icon to copy the database URL
+
+
+### **Heroku**
+
+Steps for deployment:
+1. Click "New" and select "Create new app".
+2. Input a meaningful name for your app and choose the region best suited to your location.
+3. Select "Settings" from the tabs.
+4. Add the config vars:
+    * Database URL (your DB URL)
+    * Secret Key (Example: Any secret-key)
+    * Port (In my case is 8000)
+
+5. Select "Deploy" from the tabs.
+6. Link the Heroku app to the respository.
+7. Select "GitHub - Connect to GitHub" from deployment methods.
+8. Search for the GitHub repository by name.
+9. Either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually.
+ Manually deployed branches will need re-deploying each time the repo is updated.
+10. Click on Deploy.
+11. Click View button to view the deployed site.
 
 
 
