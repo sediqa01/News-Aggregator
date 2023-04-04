@@ -91,7 +91,7 @@ class AddNewsPost(UserPassesTestMixin, LoginRequiredMixin, CreateView):
         form.instance.author = author
         form.save()
         return super().form_valid(form)
-        
+
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user.is_superuser
 

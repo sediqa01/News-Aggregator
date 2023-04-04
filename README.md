@@ -218,10 +218,64 @@ Note: I created a user data model and used the Django user model as well. I'll u
 * User Profile
 * Contact Form
 
+## __Testing__
+
+### CSS Validation 
+I used to validate every page of the project to ensure there were no CSS syntax errors in the project.
+
+![CSS Validation](./readme/Images/css-validator.jpg)
+
+
+### JS Hint 
+I used to validate the very minimal JavaScript in this project.
+
+![JS Hint](./readme/Images/js-validator1.jpg)
+
+* I used onclick event to make a cancel button in the delete news post. I used JS Hint for validation as well. 
+
+![JS Hint](./readme/Images/js-validator0.jpg)
+
+### Testing with Chrome DevTools Lighthouse
+
+![Lighthouse Report](./readme/Images/lighthouse.jpg)
+
+
+### CI Python Linter 
+All code passed without errors, except settings.py and views.py which showed E501 'line too long' warnings.
+
+* **CI Python Linter sittings.py** 
+
+![CI Python Linter sittings.py](./readme/Images/sittings.jpg)
+
+* **CI Python Linter views.py** 
+
+![Lighthouse Report views.py](./readme/Images/views.jpg)
+
+* **CI Python Linter admin.py** 
+
+![Lighthouse Report views.py](./readme/Images/python0.jpg)
+
+* **CI Python Linter forms.py**
+
+![Lighthouse Report views.py](./readme/Images/python1.jpg)
+
+* **CI Python Linter models.py** 
+
+![Lighthouse Report views.py](./readme/Images/python2.jpg)
+
+* **CI Python Linter urls.py** 
+
+![Lighthouse Report views.py](./readme/Images/python3.jpg)
+
+* **CI Python Linter urls.py** 
+
+![Lighthouse Report views.py](./readme/Images/python4.jpg)
+
+
 
 ## __Technologies Used__
 
-**1. Languages**
+### **1. Languages**
 
 * HTML5
 * CSS3
@@ -229,7 +283,7 @@ Note: I created a user data model and used the Django user model as well. I'll u
 * Python
 
 
-**2. Frameworks, Libraries & Programs**
+### **2. Frameworks, Libraries & Programs**
 
 * **Django:** The Django web framework was used to create the full-stack web application.
 * **PostgreSQL:** was used as the object-relational database system.
@@ -244,7 +298,7 @@ Note: I created a user data model and used the Django user model as well. I'll u
 * **Font Awesome:** Font Awesome was used on all pages throughout the website to add icons for UX purposes.
 * **Font Awesome Favicon Generator** Font Awesome Favicon Generator was used to reproduce a favicon.
 
-**3. Python Modules and Packages**
+### **3. Python Modules and Packages**
 
 * **cloudinary:** Used for the post Image Model field, Image upload and deletion.
 * **django-crispy-forms:** Used to format form elements and layout.
