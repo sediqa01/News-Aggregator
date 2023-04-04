@@ -63,7 +63,7 @@ I created Wireframes to visualize the site's design and act as a template to use
 
 **Article Page**
 
-![NewsTime Article](./readme/Images/article.jpg)
+![NewsTime Article](./readme/Images/article-w.jpg)
 
 
 **Sign up page Page**
@@ -119,18 +119,98 @@ Note: I created a user data model and used the Django user model as well. I'll u
 
     * Site Nav for Standard User
 
-        ![NewsTime Navbar Standard Userl](./readme/Images/logged-nav.jpg)
+        ![NewsTime Navbar Standard User](./readme/Images/logged-nav.jpg)
 
     * Responsive Navbar Admin
 
-        ![NewsTime Navbar Standard Userl](./readme/Images/responsive-nav-admin.jpg.jpg)
+        ![NewsTime Responsive Navbar Admin](./readme/Images/responsive-nav-admin.jpg)
 
     * Responsive Navbar Standard User
 
-        ![NewsTime Navbar Standard Userl](./readme/Images/responsive-nav.jpg.jpg)
+        ![NewsTime Responsive Navbar Standard User](./readme/Images/responsive-nav.jpg)
+
+    The navigation bar was created with bootstrap and it's fully responsive across devices.
 
 
 * **Home Page**
+
+    The home page is the user's first call port and is composed of a list of news post. The feature here is the links to the news posts and its details like: news title, news overview, news category, published date, an eye-catching image of the news which draws the attention of users to open the links and read the article. All this detail makes it possible for users to find their favorite news topic in time.
+
+    ![NewsTime Home page](./readme/Images/home-nonuser.jpg)
+
+
+* **Article Page**
+
+    The users can read the detail about the news by clicking on the title of the news post.
+
+    ![NewsTime Article page](./readme/Images/article.jpg)
+
+* **Comments & Like**
+
+    The Comments and Likes feature is restricted access to standard users. Users who are registered in NewsTime could leave a comment or Like an article.
+
+    ![NewsTime Comments & Like section](./readme/Images/comment-like.jpg)
+
+
+* **Comment List**
+
+    For those who aren't registered in Newstime, Can only read the comments on the article page.
+    
+    ![NewsTime Comment list](./readme/Images/comment-list.jpg)
+
+* **Sign Up Page**
+
+    ![NewsTime Sign Up Page](./readme/Images/signup-p.jpg)
+
+* **Sign In Page**
+
+    ![NewsTime Sign Up Page](./readme/Images/signin-p.jpg)
+
+* **Sign Out page**
+
+    ![NewsTime Sign Up Page](./readme/Images/signout-p.jpg)
+
+* **Footer**
+
+    The footer section is consistent on all pages and includes links to the relevant social media sites and follows the same style as the navigation bar, and appears in the same format on all pages - this allows for consistency throughout the site.
+
+    ![NewsTime Article page](./readme/Images/footer.jpg)
+
+    * The links will open in a separate tab in a browser to allow easy navigation for the users.
+    * The footer is useful for users to get connected with the community for socialization through social networks.
+
+
+
+* **Admin Home Page**
+
+    The Admin page is only accessible for Admin users specifically. This page informs the superuser how to add, edit and delete news posts.
+
+    ![NewsTime Admin Home page](./readme/Images/home-admin.jpg)
+
+    * **Add Post - Admin page**
+
+        The Add Song page is only accessible for Admin. This page consists of a form to be completed in order to add a news post, with title, news overview, news content input fields, featured image, news category and pulished status selector.
+        The Add News Post form is fully responsive across all devices.
+
+    ![NewsTime Admin Add News page](./readme/Images/admin-addnews.jpg)
+        
+
+    * **Update/Edit News Post - Admin page**
+
+        This page consists of a form with pre filled content. Update a news post form includes: title, news overview, news content input fields, featured image, news category and pulished status selector.
+        The Update News Post form is fully responsive across all devices.
+
+    ![NewsTime Admin Add News page](./readme/Images/edit-admin.jpg)
+
+
+    * **Delete News Post - Admin page**
+
+        The feature for this page is an eye-catching Warning text with exclamation font awesome icon, confirm buton and cancel button.
+
+    ![NewsTime Admin Delete News page](./readme/Images/admin-delete-post.jpg)
+
+
+
 
 
 

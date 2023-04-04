@@ -68,6 +68,12 @@
     text-align: justify;
 }
 
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Pagination */
 .page-link {
     background-color: #cf4b1f;
