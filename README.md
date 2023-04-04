@@ -8,7 +8,6 @@ NewsTime is responsible for the gathering and broadcasting of news and current a
 
 
 ## __User Experience (UX)__
-___
 
 ### _User Stories_
 
@@ -77,7 +76,7 @@ I created Wireframes to visualize the site's design and act as a template to use
 
 ![NewsTime Sign In](./readme/Images/signin.jpg)
 
-
+**Note:** explantion 
 
 ### _ERD (Entity Relationship Diagram)_
 
@@ -100,3 +99,41 @@ Note: I created a user data model and used the Django user model as well. I'll u
 ![NewsTime User Data Model](./readme/Images/user.jpg)
 
 
+
+## __Features__
+
+### _Existing Features_
+
+* **Navigation Bar**
+
+    The full responsive navigation bar is featured on all the pages to allow for easy navigation from page to page across all devices. Access is distinct between admins and standard users, with restricted access to standard users.
+    On the left side is logo, which can be used as navigation link to the main page, also links to the Home, Add News, Sign Up, SignIn, Sign Out.
+
+    * Site Nav for Admins
+
+        ![NewsTime Navbar for Admins](./readme/Images/admin-nav.jpg)
+    
+    * Site Nav for First time visitor 
+
+        ![NewsTime Navbar](./readme/Images/nonuser.jpg)
+
+    * Site Nav for Standard User
+
+        ![NewsTime Navbar Standard Userl](./readme/Images/logged-nav.jpg)
+
+    * Responsive Navbar Admin
+
+        ![NewsTime Navbar Standard Userl](./readme/Images/responsive-nav-admin.jpg.jpg)
+
+    * Responsive Navbar Standard User
+
+        ![NewsTime Navbar Standard Userl](./readme/Images/responsive-nav.jpg.jpg)
+
+
+* **Home Page**
+
+
+
+
+ 
+        
