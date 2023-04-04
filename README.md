@@ -211,6 +211,55 @@ Note: I created a user data model and used the Django user model as well. I'll u
 
 
 
+### _Future Implementations_
+
+* Social Sharing Button
+* Popular News Post Section
+* User Profile
+* Contact Form
+
+
+## __Technologies Used__
+
+**1. Languages**
+
+* HTML5
+* CSS3
+* JavaScript
+* Python
+
+
+**2. Frameworks, Libraries & Programs**
+
+* **Django:** The Django web framework was used to create the full-stack web application.
+* **PostgreSQL:** was used as the object-relational database system.
+* **ElephantSQL:** ElephantSQL was used to host the database.
+* **Bootstrap:** Bootstrap was used through the project to style the project and create responsive elements/layouts.
+* **Git:** Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+* **GitHub:** GitHub is used to store the projects code after being pushed from Git.
+* **Heroku:** Heroku was used for the deployed application.
+* **Balsamiq:** Balsamiq was used to create the wireframes during the design process.
+* **Chrome DevTools:** Chrome DevTools was used to consistently check the site in terms of responsivity,
+ performance, accessibility, best practice and SEO.
+* **Font Awesome:** Font Awesome was used on all pages throughout the website to add icons for UX purposes.
+* **Font Awesome Favicon Generator** Font Awesome Favicon Generator was used to reproduce a favicon.
+
+**3. Python Modules and Packages**
+
+* **cloudinary:** Used for the post Image Model field, Image upload and deletion.
+* **django-crispy-forms:** Used to format form elements and layout.
+* **crispy-bootstrap5:** Used to style form using Bootstrap5.
+* **dj-database-url:** Allows the use of 'DATABASE_URL' environmental variable in the Django project settings file to 
+ connect to a PostgreSQL database.
+* **dj3-cloudinary-storage:** Facilitates integration with Cloudinary by implementing Django Storage API.
+* **django-allauth:** Set of Django application used for account registration, management and authentication.
+* **django-filter:** Application that allows dynamic QuerySet filtering from URL parameters.
+* **django-model-utils:** Easily add choices to a django model field.
+* **django-summernote:** Allows easy use of the Summernote WYSIWYG editor in Django projects.
+* **gunicorn:** Python WSGI HTTP Server.
+* **psycopg2:** Python PostgreSQL database adapter.
+
+
 
 
 
