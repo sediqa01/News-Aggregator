@@ -222,6 +222,8 @@ Note: I created a user data model and used the Django user model as well. I'll u
 
 ### HTML Validation 
 
+![HTML Validation](./readme/Images/html0.jpg)
+
 
 ### CSS Validation 
 I used to validate every page of the project to ensure there were no CSS syntax errors in the project.
