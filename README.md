@@ -271,6 +271,17 @@ All code passed without errors, except settings.py and views.py which showed E50
 
 ![Lighthouse Report views.py](./readme/Images/python4.jpg)
 
+## __Bugs__
+
+1. **Sign Up Form is not organized:** To authenticate on my site, I used the allauth library. Because the allauth templates use `{form.as_p}` for registration by default. Unfortunately, the form appears irregular in this case. After much searching, I discovered that in order to make the form regular, I must add the `class:"form-contro"` bootstrap class. I followed the instructions, but the form remained in the same state. Later, with the advice of the tutor support, I used  `{form |crispy}` for the solution, and everything went as planned.
+
+
+2. **summernote is not responsive:** To make summernote responsive on small devices, I added a few lines of code in the settings file and this method worked well.
+
+![summer note](./readme/Images/summernote.jpg)
+
+3. I used the col-md-10 class to center the news photo and the offset-md-1 class to size the photo.
+
 
 
 ## __Technologies Used__
@@ -316,7 +327,7 @@ All code passed without errors, except settings.py and views.py which showed E50
 
 ## __Deployment__
 
-### **Create a database**
+### **Create a Database**
 These steps will create a PostgreSQL database:
 1. Log in to ElephantSQL.com to access your dashboard
 2. Click "Create New Instance"
@@ -350,7 +361,38 @@ Steps for deployment:
 11. Click View button to view the deployed site.
 
 
+## __Credits__
 
+1. I have to Acknowledgement that the Code Institute LMS, in particular the CI I Think Therefore I Blog Walkthrough 
+was the main and big guide for me during devloping the site. I followed this project step by step and applied the steps in my project development journey.
+2. Django Documentation
+3. Stack Overflow
+4. W3Schools
+
+### _Codes_
+
+1. The code for cancel button in delete news post template were taken from [SnakeyCode](https://snakeycode.wordpress.com/2016/08/25/add-a-cancel-button-to-django-delete-confirm-template/)
+
+2. The code for making the summernote responsive were taken from [Slak Community](https://code-institute-room.slack.com/archives/C026PTF46F5/p1659130123716359?thread_ts=1659128142.218429&cid=C026PTF46F5)
+
+3. The code for cards were taken from bootstrap
+4. The code for displaying current day were taken from [W3Schools](https://www.w3schools.com/django/ref_tags_now.php)
+
+### _Contents & Media_
+
+1. All the news contnt and news image were taken from [BBC](https://www.bbc.com/news)
 
  
+ ### _Acknowledgements_
+ A big thanks to:
+
+ 1. [Our CI Tutor Support team:](https://learn.codeinstitute.net/ci_support/diplomainfullstacksoftwarecommoncurriculum/tutor) a heartful thanks for always being there for us!
+ * Ed
+ * Jason
+ * Oisin
+ * Holly
+ * Martin
+
+ every efforts that make this project possible is credit to our amazing community. Tutor team, Student Care, Sclack and the CI I Think Therefore I Blog Walkthrough.
+
         
