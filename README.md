@@ -220,6 +220,9 @@ Note: I created a user data model and used the Django user model as well. I'll u
 
 ## __Testing__
 
+### HTML Validation 
+
+
 ### CSS Validation 
 I used to validate every page of the project to ensure there were no CSS syntax errors in the project.
 
@@ -280,7 +283,7 @@ All code passed without errors, except settings.py and views.py which showed E50
 
 ![summer note](./readme/Images/summernote.jpg)
 
-3. I used the col-md-10 class to center the news photo and the offset-md-1 class to size the photo.
+3. I used the `col-md-10` class to center the news photo and the `offset-md-1` class to size the photo.
 
 
 
@@ -372,9 +375,7 @@ was the main and big guide for me during devloping the site. I followed this pro
 ### _Codes_
 
 1. The code for cancel button in delete news post template were taken from [SnakeyCode](https://snakeycode.wordpress.com/2016/08/25/add-a-cancel-button-to-django-delete-confirm-template/)
-
 2. The code for making the summernote responsive were taken from [Slak Community](https://code-institute-room.slack.com/archives/C026PTF46F5/p1659130123716359?thread_ts=1659128142.218429&cid=C026PTF46F5)
-
 3. The code for cards were taken from bootstrap
 4. The code for displaying current day were taken from [W3Schools](https://www.w3schools.com/django/ref_tags_now.php)
 
@@ -390,9 +391,9 @@ was the main and big guide for me during devloping the site. I followed this pro
  * Ed
  * Jason
  * Oisin
+ * Sean
  * Holly
  * Martin
-
- every efforts that make this project possible is credit to our amazing community. Tutor team, Student Care, Sclack and the CI I Think Therefore I Blog Walkthrough.
+ Every efforts that make this project possible is credit to our amazing community. Tutor team, Student Care, Slack Community and the CI I Think Therefore I Blog Walkthrough.
 
         

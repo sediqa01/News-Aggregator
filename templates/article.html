@@ -9,15 +9,15 @@
             <div class="text-center">
                 <br>
                 <h2 id="news-title">{{ article.news_title }}</h2>
-                <p class="category-name-d">{{ article.created_on }} <span class="c-color"> |
-                    </span><span>{{ article.news_categories.all.0}}</span></p>
+                <div class="category-name-d">{{ article.created_on }} <span class="c-color"> |
+                    </span>{{ article.news_categories.all.0}}</div>
                 <br>
             </div>
             <div class="col-md-10 offset-md-1 img-container">
                 {% if "placeholder" in article.news_image.url %}
-                <img src="{% static 'image/newsImage.jpg' %}" alt="News Image" width="100%">
+                <img src="{% static 'image/newsImage.jpg' %}" alt="News Image">
                 {% else %}
-                <img src=" {{ article.news_image.url }}" alt="News Image" width="100%">
+                <img src=" {{ article.news_image.url }}" alt="News Image">
                 {% endif %}
             </div>
             <!-- News Content -->
