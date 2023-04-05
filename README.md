@@ -1,10 +1,10 @@
 
 <h1 align="center">NewsTime</h1> 
 
-NewsTime is for anyone who wants to stay informed and engaged with news from around the world and the latest news from various categories like Politics, Business, Art, Technology, Science, Economy.
+[NewsTime](https://news-time.herokuapp.com/) is for anyone who wants to stay informed and engaged with news from around the world and the latest news from various categories like Politics, Business, Art, Technology, Science, Economy.
 NewsTime is responsible for the gathering and broadcasting of news and current affairs around the world.
 
-![NewsTime](AmIResponsive)
+![NewsTime](./readme/Images/amiresponsive.jpg)
 
 
 ## __User Experience (UX)__
