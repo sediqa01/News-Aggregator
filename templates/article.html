@@ -15,9 +15,9 @@
             </div>
             <div class="col-md-10 offset-md-1 img-container">
                 {% if "placeholder" in article.news_image.url %}
-                <img src="{% static 'image/newsImage.jpg' %}" alt="News Image">
+                <img src="{% static 'image/newsImage.jpg' %}" alt="News Image" width="100%">
                 {% else %}
-                <img src=" {{ article.news_image.url }}" alt="News Image">
+                <img src=" {{ article.news_image.url }}" alt="News Image" width="100%">
                 {% endif %}
             </div>
             <!-- News Content -->
